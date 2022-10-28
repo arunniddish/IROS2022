@@ -12,7 +12,7 @@ GAIT_LIBRARY_MAT = 'data/gait_library_2_corrected.mat';
 MSORO_PGM = 'data/starfish1.pgm';
 
 % World selection
-world = 4;                              % scenario selection: 1 through 4
+world = 3;                              % scenario selection: 1 through 4
 world_construct_method = 'actual';      % 'ideal' or 'actual' (ideal planned world vs. actual captured binary world)
 
 % Grid world properties
@@ -30,9 +30,12 @@ stop_radius = 50*gridS.dg;    % goal radius within which planning completes
 
 
 % [1] == Script setup
-addpath('~/ivalibs/fastmarch');
-addpath('~/ivaMatlibs/groups');
-addpath('~/ivaMatlibs/control');
+% addpath('~/ivalibs/fastmarch');
+addpath('C:\Users\anmahendran\OneDrive - The University of Alabama\Documents\GitHub\fastmarch');
+% addpath('~/ivaMatlibs/groups');
+addpath('C:\Users\anmahendran\OneDrive - The University of Alabama\Documents\GitHub\groups');
+% addpath('~/ivaMatlibs/control');
+addpath('C:\Users\anmahendran\OneDrive - The University of Alabama\Documents\GitHub\control');
 addpath('../');
 
 set(groot, 'defaultAxesTickLabelInterpreter','latex');
