@@ -8,11 +8,12 @@
 %
 
 % [0] == Script usage
-GAIT_LIBRARY_MAT = 'data/gait_library_2_corrected.mat';
+% GAIT_LIBRARY_MAT = 'data/gait_library_2_corrected.mat';
+GAIT_LIBRARY_MAT = 'data/gait_library_3.mat';
 MSORO_PGM = 'data/starfish1.pgm';
 
 % World selection
-world = 3;                              % scenario selection: 1 through 4
+world = 1;                              % scenario selection: 1 through 4
 world_construct_method = 'actual';      % 'ideal' or 'actual' (ideal planned world vs. actual captured binary world)
 
 % Grid world properties
@@ -115,9 +116,9 @@ msoroRTPlanner = planning.MSoRoRTPlanner(params);
 cf = msoroRTPlanner.setScenario( world_img, rad_falloff );
 
 %  [3c] == Set MSoRo gaits for planning
-gait_library = load(GAIT_LIBRARY_MAT).gait_library_2;
-rot_gait = gait_library(2);     % rotational gait
-trans_gait = gait_library(5);   % translational gait
+gait_library = load(GAIT_LIBRARY_MAT).gait_library_3;
+rot_gait = gait_library(1);     % rotational gait - Gait B
+trans_gait = gait_library(3);   % translational gait - Gait G
 
 msoroRTPlanner.setGaits( rot_gait, trans_gait );
 

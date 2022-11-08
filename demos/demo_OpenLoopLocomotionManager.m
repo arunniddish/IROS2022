@@ -25,7 +25,8 @@ set(groot, 'defaultTextInterpreter','latex');
 
 
 % [1] == Script usage parameter(s):
-GAIT_LIBRARY_MAT = 'data/gait_library_2.mat';
+% GAIT_LIBRARY_MAT = 'data/gait_library_2.mat';
+GAIT_LIBRARY_MAT = 'data/gait_library_3.mat';
 TRAJECTORY_PLAN_MAT = 'data/msoro_openloop_trajectory.mat';
 
 OUTPUT_MAT_FILE = 'data/msoro_exp_scenario01.mat';
@@ -46,14 +47,15 @@ logging_params.data_collect_level = 1;    % collect ALL data
 locom_mgr.set_logging( logging_params );
 
 % Set gait motion model(s)
-gait_motion_models = load(GAIT_LIBRARY_MAT).gait_library_2([2, 5]);
+% gait_motion_models = load(GAIT_LIBRARY_MAT).gait_library_2([2, 5]);
+gait_motion_models = load(GAIT_LIBRARY_MAT).gait_library_3([1, 3]);
 locom_mgr.set_gait_models(gait_motion_models); 
 
 % Initialize
 msoro_io_params.port = port;
 msoro_io_params.baud = baud;
 msoro_io_params.timeout = timeout;
-locom_mgr.initialize(msoro_io_params); 
+% locom_mgr.initialize(msoro_io_params); 
 
 
 % [3] == Begin robot locomotion control/management
